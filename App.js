@@ -5,47 +5,32 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CounterApp from './Counter';
+import CounterApp from './src/componenets/Counter';
 
 const Stack = createStackNavigator();
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0
-    };
-  }
-
-  onPressCountButton = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-  }
-
-  render() {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{ title: 'Welcome' }}
-          />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Count" component={CountScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Count" component={CountScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const HomeScreen = ({ navigation }) => {
   return (
     <Button
-      title="Go to Jane's profile"
+      title="Go to Counter's profile"
       onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' })
+        navigation.navigate('Profile', { name: 'Counter' })
       }
     />
   );
@@ -71,10 +56,10 @@ const CountScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
