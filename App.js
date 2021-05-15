@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-//import React, { Component } from 'react';
 import { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import 'react-native-gesture-handler';
@@ -7,35 +6,6 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CounterApp from './Counter';
-
-/*class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0
-    };
-  }
-
-  onPressCountButton = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Count is {this.state.count}</Text>
-        <Button onPress={this.onPressCountButton}
-          title="Increase Count"
-          color="#841584">
-          <Text>Click</Text>
-        </Button>
-        <StatusBar style="auto" />
-      </View>
-    );
-  }
-}*/
 
 const Stack = createStackNavigator();
 
